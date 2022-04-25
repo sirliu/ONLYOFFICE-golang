@@ -25,4 +25,6 @@ jobs:
         fi
 
     - name: Build
-      run: go build -v .
+      run: |
+        GOOS=linux GOARCH=amd64 go build -v . -o linux_amd64
+        GOOS=linux GOARCH=arm64 go build -v . -o linux_arm64
